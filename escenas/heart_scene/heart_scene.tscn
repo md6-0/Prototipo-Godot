@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0sdrbs180hhq"]
+
+[ext_resource type="Script" path="res://escenas/heart_scene/heart_scene.gd" id="1_qonao"]
+[ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="2_214nq"]
+[ext_resource type="AudioStream" uid="uid://do76jto4eriw2" path="res://assets/sound/sfx/add_credit.wav" id="3_ua7pj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovo21"]
+radius = 7.0
+
+[node name="Heart" type="Area2D"]
+script = ExtResource("1_qonao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ovo21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_214nq")
+region_enabled = true
+region_rect = Rect2(34.4873, 35.4417, 15.1346, 13.0979)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ua7pj")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

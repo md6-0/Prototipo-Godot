@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bei37e78shlq8"]
+
+[ext_resource type="Script" path="res://escenas/underground_death_limit/underground_death_limit.gd" id="1_yxv0o"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y111n"]
+
+[node name="UndergroundDeathLimit" type="Area2D"]
+position = Vector2(-5, 0)
+script = ExtResource("1_yxv0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 0)
+shape = SubResource("WorldBoundaryShape2D_y111n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

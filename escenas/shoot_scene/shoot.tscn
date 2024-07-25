@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://u8lwlwx0ejak"]
+
+[ext_resource type="Script" path="res://escenas/shoot_scene/shoot.gd" id="1_dmhfp"]
+[ext_resource type="Texture2D" uid="uid://cu63jkn71t7c8" path="res://assets/proyectile.png" id="2_ie6i1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltn27"]
+size = Vector2(26, 14)
+
+[node name="Shoot" type="Area2D" groups=["shoot"]]
+script = ExtResource("1_dmhfp")
+
+[node name="Shoot_CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_ltn27")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ie6i1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://d15p76cg2chn3"]
+
+[ext_resource type="Script" path="res://escenas/player_scene/Player.gd" id="1_mp110"]
+[ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="2_pquw2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rnra"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(85, 255, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gb2y"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(102, 221, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2884"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(102, 238, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a75t"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(102, 255, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr82o"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(68, 255, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw75u"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(17, 255, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d87te"]
+atlas = ExtResource("2_pquw2")
+region = Rect2(34, 255, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jw3kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rnra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gb2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2884")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a75t")
+}],
+"loop": false,
+"name": &"die",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr82o")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw75u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d87te")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq55q"]
+size = Vector2(6, 8)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_mp110")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jw3kd")
+animation = &"jump"
+autoplay = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_fq55q")

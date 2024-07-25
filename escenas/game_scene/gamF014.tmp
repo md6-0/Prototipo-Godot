@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqrfeanyxkhqe"]
+
+[ext_resource type="PackedScene" uid="uid://d4e3shoqg2ay3" path="res://escenas/gui_scene/gui.tscn" id="1_2fu76"]
+[ext_resource type="Script" path="res://escenas/game_scene/game.gd" id="1_o02c3"]
+[ext_resource type="Script" path="res://escenas/game_scene/Procedural_Level_Generator.gd" id="2_bnlrx"]
+[ext_resource type="AudioStream" uid="uid://b7dl8nbnwqkj0" path="res://assets/sound/music/level_music.mp3" id="3_estvj"]
+[ext_resource type="PackedScene" uid="uid://d15p76cg2chn3" path="res://escenas/player_scene/Player.tscn" id="3_v7djr"]
+[ext_resource type="PackedScene" uid="uid://bei37e78shlq8" path="res://escenas/underground_death_limit/underground_death_limit.tscn" id="9_py327"]
+
+[node name="Game" type="Node2D" groups=["levels"]]
+script = ExtResource("1_o02c3")
+
+[node name="Procedural_Level_Generator" type="Node" parent="."]
+script = ExtResource("2_bnlrx")
+
+[node name="Collisions_Shapes" type="Node" parent="."]
+
+[node name="UndergroundDeathLimit" parent="Collisions_Shapes" instance=ExtResource("9_py327")]
+position = Vector2(3616, 91)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="a_timer" type="Timer" parent="Timers"]
+wait_time = 0.7
+
+[node name="b_timer" type="Timer" parent="Timers"]
+wait_time = 0.7
+
+[node name="x_timer" type="Timer" parent="Timers"]
+wait_time = 0.7
+
+[node name="y_timer" type="Timer" parent="Timers"]
+wait_time = 0.7
+
+[node name="Game_over_timer" type="Timer" parent="Timers"]
+wait_time = 3.0
+one_shot = true
+
+[node name="GUI" parent="." instance=ExtResource("1_2fu76")]
+offset_left = -93.0
+offset_top = 11.0
+offset_right = -93.0
+offset_bottom = 11.0
+
+[node name="Player" parent="." instance=ExtResource("3_v7djr")]
+position = Vector2(25, 59)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_estvj")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="timeout" from="Timers/a_timer" to="Player" method="_on_a_timer_timeout"]
+[connection signal="timeout" from="Timers/b_timer" to="Player" method="_on_b_timer_timeout"]
+[connection signal="timeout" from="Timers/x_timer" to="Player" method="_on_x_timer_timeout"]
+[connection signal="timeout" from="Timers/y_timer" to="Player" method="_on_y_timer_timeout"]
+[connection signal="timeout" from="Timers/Game_over_timer" to="." method="_on_game_over_timer_timeout"]
