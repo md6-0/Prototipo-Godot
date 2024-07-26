@@ -12,6 +12,7 @@ var segment_scene_1 = preload("res://escenas/segments_scenes/segment_scene_1.tsc
 var segment_scene_2 = preload("res://escenas/segments_scenes/segment_scene_2.tscn")
 var segment_scene_3 = preload("res://escenas/segments_scenes/segment_scene_3.tscn")
 var segment_scene_4 = preload("res://escenas/segments_scenes/segment_scene_4.tscn")
+var segment_scene_5 = preload("res://escenas/segments_scenes/segment_scene_5.tscn")
 
 var player: Player
 
@@ -21,9 +22,14 @@ func _ready():
 	
 	# Añadir las escenas de los segmentos al array
 	segment_scenes.append(segment_scene_1)
+	segment_scenes.append(segment_scene_1)
+	segment_scenes.append(segment_scene_2)
 	segment_scenes.append(segment_scene_2)
 	segment_scenes.append(segment_scene_3)
+	segment_scenes.append(segment_scene_3)
 	segment_scenes.append(segment_scene_4)
+	segment_scenes.append(segment_scene_4)
+	segment_scenes.append(segment_scene_5)
 	# Generar los 6 primeros segmentos del nivel
 	spawn_first_segment()
 	for i in range(5):
