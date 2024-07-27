@@ -32,6 +32,7 @@ func _ready():
 	segment_scenes.append(segment_scene_4)
 	segment_scenes.append(segment_scene_5) 
 	segment_scenes.append(segment_scene_6)
+
 	# Generar los 6 primeros segmentos del nivel
 	spawn_first_segment()
 	for i in range(5):

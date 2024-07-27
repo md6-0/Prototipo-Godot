@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kiusx2mi4844"
-path="res://.godot/imported/Floor.png-1986a68a011c9d9847f815defae65829.ctex"
+uid="uid://ckhdbxalfyt21"
+path="res://.godot/imported/emptycard.png-048ad108c124f91a4ba565071ab235c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Floor.png"
-dest_files=["res://.godot/imported/Floor.png-1986a68a011c9d9847f815defae65829.ctex"]
+source_file="res://assets/emptycard.png"
+dest_files=["res://.godot/imported/emptycard.png-048ad108c124f91a4ba565071ab235c6.ctex"]
 
 [params]
 

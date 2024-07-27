@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqrfeanyxkhqe"]
+[gd_scene load_steps=7 format=3 uid="uid://dqrfeanyxkhqe"]
 
 [ext_resource type="PackedScene" uid="uid://d4e3shoqg2ay3" path="res://escenas/gui_scene/gui.tscn" id="1_2fu76"]
 [ext_resource type="Script" path="res://escenas/game_scene/game.gd" id="1_o02c3"]
 [ext_resource type="Script" path="res://escenas/game_scene/Procedural_Level_Generator.gd" id="2_bnlrx"]
+[ext_resource type="PackedScene" uid="uid://oefx6dl4ody" path="res://escenas/pause_scene/pause.tscn" id="2_oas22"]
 [ext_resource type="AudioStream" uid="uid://b7dl8nbnwqkj0" path="res://assets/sound/music/level_music.mp3" id="3_estvj"]
 [ext_resource type="PackedScene" uid="uid://d15p76cg2chn3" path="res://escenas/player_scene/Player.tscn" id="3_v7djr"]
 
@@ -35,6 +36,10 @@ offset_left = -93.0
 offset_top = 11.0
 offset_right = -93.0
 offset_bottom = 11.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("2_oas22")]
 
 [node name="Player" parent="." instance=ExtResource("3_v7djr")]
 position = Vector2(3, -50)

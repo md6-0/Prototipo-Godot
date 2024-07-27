@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://oefx6dl4ody"]
+
+[ext_resource type="Script" path="res://escenas/pause_scene/pause.gd" id="1_81hvi"]
+[ext_resource type="Theme" uid="uid://dwocoy3cdqw1r" path="res://escenas/theme.tres" id="2_11q1r"]
+[ext_resource type="FontFile" uid="uid://bvxgms0k75jgt" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_53xnl"]
+[ext_resource type="AudioStream" uid="uid://dwlc7qgwpbbu7" path="res://assets/sound/sfx/coin.wav" id="4_inyx7"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_81hvi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 544.0
+offset_bottom = 321.0
+color = Color(0, 0, 0, 0.843137)
+
+[node name="Label_pause" type="Label" parent="CanvasLayer"]
+offset_left = 179.0
+offset_top = 48.0
+offset_right = 371.0
+offset_bottom = 80.0
+theme = ExtResource("2_11q1r")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_53xnl")
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+
+[node name="Continue" type="Button" parent="CanvasLayer"]
+offset_left = 75.0
+offset_top = 110.0
+offset_right = 191.0
+offset_bottom = 141.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Exit")
+focus_neighbor_right = NodePath("../Menu")
+theme = ExtResource("2_11q1r")
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "CONTINUE"
+
+[node name="Menu" type="Button" parent="CanvasLayer"]
+offset_left = 203.0
+offset_top = 110.0
+offset_right = 367.0
+offset_bottom = 141.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Continue")
+focus_neighbor_right = NodePath("../Exit")
+theme = ExtResource("2_11q1r")
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+text = "EXIT TO MENU"
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 378.0
+offset_top = 110.0
+offset_right = 494.0
+offset_bottom = 141.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Menu")
+focus_neighbor_right = NodePath("../Continue")
+theme = ExtResource("2_11q1r")
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "EXIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_inyx7")
+volume_db = -20.0
+pitch_scale = 1.6
+
+[connection signal="focus_entered" from="CanvasLayer/Continue" to="." method="_on_continue_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/Menu" to="." method="_on_menu_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

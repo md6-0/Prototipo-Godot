@@ -14,7 +14,6 @@ func _on_area_2d_body_entered(body):
 		player = body
 		player_detected = true
 		shoot()
-		sprite_2d.modulate = Color(1, 0, 0, 1)
 
 func shoot():
 	var projectile = ProjectileScene.instantiate()

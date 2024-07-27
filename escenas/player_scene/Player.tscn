@@ -1,19 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://d15p76cg2chn3"]
+[gd_scene load_steps=17 format=3 uid="uid://d15p76cg2chn3"]
 
 [ext_resource type="Script" path="res://escenas/player_scene/Player.gd" id="1_mp110"]
 [ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="2_pquw2"]
+[ext_resource type="PackedScene" uid="uid://givwxu3aetcc" path="res://escenas/player_scene/dash_particles.tscn" id="3_6o78x"]
 [ext_resource type="AudioStream" uid="uid://cxlrm6ayq3b1b" path="res://assets/sound/sfx/player_damage.wav" id="3_832k5"]
 [ext_resource type="AudioStream" uid="uid://curn878t1nv1s" path="res://assets/sound/sfx/jump.wav" id="4_37bxf"]
 [ext_resource type="AudioStream" uid="uid://c0vbcaailueqx" path="res://assets/sound/sfx/dash.wav" id="5_uxr6n"]
 [ext_resource type="AudioStream" uid="uid://ddhvsltqwxooa" path="res://assets/sound/sfx/shot.wav" id="6_mn1ky"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsrb5"]
-atlas = ExtResource("2_pquw2")
-region = Rect2(0, 255, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ga377"]
-atlas = ExtResource("2_pquw2")
-region = Rect2(85, 255, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l2au"]
 atlas = ExtResource("2_pquw2")
@@ -45,17 +38,6 @@ region = Rect2(34, 255, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jw3kd"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gsrb5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ga377")
-}],
-"loop": true,
-"name": &"celebration",
-"speed": 4.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3l2au")
@@ -109,9 +91,10 @@ position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jw3kd")
-animation = &"celebration"
+animation = &"run"
 autoplay = "run"
-frame_progress = 0.444763
+
+[node name="DashParticles" parent="." instance=ExtResource("3_6o78x")]
 
 [node name="Area2D" type="Area2D" parent="."]
 

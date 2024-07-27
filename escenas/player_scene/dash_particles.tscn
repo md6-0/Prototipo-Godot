@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://givwxu3aetcc"]
+
+[ext_resource type="Texture2D" uid="uid://dqabay0sfselq" path="res://assets/siluette.png" id="1_0u1hw"]
+
+[sub_resource type="Gradient" id="Gradient_se1j2"]
+offsets = PackedFloat32Array(0, 0.729381)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1ix5p"]
+gradient = SubResource("Gradient_se1j2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_riaai"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+color = Color(0.473976, 0.473976, 0.473976, 1)
+color_ramp = SubResource("GradientTexture1D_1ix5p")
+
+[node name="DashParticles" type="GPUParticles2D"]
+z_index = -1
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_riaai")
+texture = ExtResource("1_0u1hw")
+lifetime = 0.5

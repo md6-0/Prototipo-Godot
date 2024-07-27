@@ -1334,22 +1334,19 @@ layer_1/name = "Bg"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Enemy3" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(382, -105)
+position = Vector2(383, -98)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(567, -105)
+position = Vector2(568, -98)
 
 [node name="Enemy6" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(881, -105)
-
-[node name="Enemy7" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(938, -105)
+position = Vector2(882, -98)
 
 [node name="Enemy8" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(1177, -105)
+position = Vector2(1178, -98)
 
 [node name="Enemy9" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(1491, -105)
+position = Vector2(1492, -98)
 
 [node name="Enemy11" parent="." instance=ExtResource("3_urb53")]
-position = Vector2(1794, -105)
+position = Vector2(1795, -98)

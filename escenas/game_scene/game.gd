@@ -11,6 +11,7 @@ func _ready():
 	game_over_timer = $Timers/Game_over_timer
 	gui = $GUI
 	game_over_showing = false
+	
 
 func _on_game_over_timer_timeout():
 	game_over_timer.stop()
@@ -18,3 +19,4 @@ func _on_game_over_timer_timeout():
 	add_child(game_over_gui.instantiate())
 	gui.queue_free()
 	
+

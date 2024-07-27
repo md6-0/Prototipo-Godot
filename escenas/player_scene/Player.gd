@@ -24,6 +24,7 @@ const DASH_TIME = 0.35
 @onready var camera = $Camera2D
 @onready var level_music = $"../AudioStreamPlayer"
 @onready var game_over_timer = $"../Timers/Game_over_timer"
+@onready var dash_particles = $DashParticles
 
 var is_dead = false
 var shake_amount = 0.0
@@ -33,6 +34,8 @@ var dash_timer = 0.0
 var run_time = 0.0
 
 func _physics_process(delta):
+	if not is_dashing:
+		animated_sprite_2d.modulate = Color.WHITE
 	if is_dead:
 		death_ctrl(delta)
 	else:
@@ -63,6 +66,7 @@ func movement_ctrl(delta):
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
+			dash_particles.emitting = false
 		if not is_on_floor() and velocity.y >= 0:
 			velocity.y = 0
 	else:
@@ -102,6 +106,8 @@ func jump_ctrl():
 	velocity.y = JUMP_VELOCITY
 
 func dash_ctrl():
+	dash_particles.emitting = true
+	animated_sprite_2d.modulate = Color.KHAKI
 	audio_stream_player_dash.pitch_scale = rng.randf_range(0.8, 1.2)
 	audio_stream_player_dash.play()
 	is_dashing = true
@@ -116,15 +122,15 @@ func shoot_ctrl():
 	get_tree().call_group("levels", "add_child", proyectile_instance)
 
 func damage_ctrl(damage):
-	if not is_dashing:
-		Input.start_joy_vibration(0, .8, .8, SHAKE_DURATION)
-		audio_stream_player.play()
-		shake_duration = SHAKE_DURATION
-		GLOBAL.credits -= damage
-		if GLOBAL.credits <= 0:
-			is_dead = true
-			velocity.x = SPEED
-			collision_shape_2d.disabled = true
+	if GLOBAL.credits > 0:
+		if not is_dashing:
+			audio_stream_player.play()
+			shake_duration = SHAKE_DURATION
+			GLOBAL.credits -= damage
+			if GLOBAL.credits <= 0:
+				is_dead = true
+				velocity.x = SPEED
+				collision_shape_2d.disabled = true
 
 func apply_camera_shake(delta):
 	if shake_duration > 0:
