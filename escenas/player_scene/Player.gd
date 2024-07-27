@@ -136,6 +136,11 @@ func apply_camera_shake(delta):
 func calculate_distance():
 	return int(global_position.distance_to(Vector2.ZERO))
 
+func _on_area_2d_area_entered(area):
+	if area is Enemy3_shoot:
+		damage_ctrl(1)
+		area.queue_free()
+
 func _on_a_timer_timeout():
 	a_timer.stop()
 	GLOBAL.substitute_card(0)
@@ -151,3 +156,4 @@ func _on_x_timer_timeout():
 func _on_y_timer_timeout():
 	y_timer.stop()
 	GLOBAL.substitute_card(3)
+
