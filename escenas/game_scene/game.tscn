@@ -16,16 +16,16 @@ script = ExtResource("2_bnlrx")
 [node name="Timers" type="Node" parent="."]
 
 [node name="a_timer" type="Timer" parent="Timers"]
-wait_time = 0.7
+wait_time = 1.25
 
 [node name="b_timer" type="Timer" parent="Timers"]
-wait_time = 0.7
+wait_time = 1.25
 
 [node name="x_timer" type="Timer" parent="Timers"]
-wait_time = 0.7
+wait_time = 1.25
 
 [node name="y_timer" type="Timer" parent="Timers"]
-wait_time = 0.7
+wait_time = 1.25
 
 [node name="Game_over_timer" type="Timer" parent="Timers"]
 wait_time = 3.0

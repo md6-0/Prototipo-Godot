@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://clu6ua2i4lm4b"]
+
+[ext_resource type="Script" path="res://escenas/store_scene/item_button.gd" id="1_ijuph"]
+[ext_resource type="Theme" uid="uid://dwocoy3cdqw1r" path="res://escenas/theme.tres" id="2_f7o7q"]
+[ext_resource type="AudioStream" uid="uid://c23ybxa5faqrr" path="res://assets/sound/sfx/error_style_5_echo_001.wav" id="2_ombdr"]
+[ext_resource type="AudioStream" uid="uid://bfuskwtp8vo0v" path="res://assets/sound/sfx/confirm_style_5_echo_002.wav" id="3_vkrvo"]
+
+[node name="StoreItem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijuph")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 170.0
+theme = ExtResource("2_f7o7q")
+
+[node name="Name_Label" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 6.0
+offset_right = 83.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -58.0
+offset_right = 28.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="Description_Label" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = 17.0
+offset_right = 72.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Credits_Label" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -21.0
+offset_right = 85.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Error_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ombdr")
+
+[node name="Success_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vkrvo")
+
+[connection signal="pressed" from="Button" to="." method="_on_buy_button_pressed"]

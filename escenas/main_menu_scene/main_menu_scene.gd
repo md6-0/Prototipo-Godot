@@ -20,3 +20,7 @@ func _on_exit_focus_exited():
 
 func _on_start_focus_exited():
 	audio_stream_player.play()
+
+
+func _on_store_pressed():
+	get_tree().change_scene_to_file("res://escenas/store_scene/store.tscn")

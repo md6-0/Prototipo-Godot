@@ -28,31 +28,45 @@ theme_override_fonts/font = ExtResource("4_cn3pg")
 theme_override_font_sizes/font_size = 32
 
 [node name="Exit" type="Button" parent="CanvasLayer"]
-offset_left = 280.0
+offset_left = 378.0
 offset_top = 110.0
-offset_right = 386.0
+offset_right = 484.0
 offset_bottom = 141.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Restart")
+focus_neighbor_left = NodePath("../Store")
 focus_neighbor_right = NodePath("../Restart")
 theme = ExtResource("3_5yvkn")
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 text = "EXIT"
 
 [node name="Restart" type="Button" parent="CanvasLayer"]
-offset_left = 158.0
+offset_left = 72.0
 offset_top = 110.0
-offset_right = 264.0
+offset_right = 178.0
 offset_bottom = 141.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Exit")
-focus_neighbor_right = NodePath("../Exit")
+focus_neighbor_right = NodePath("../Store")
 theme = ExtResource("3_5yvkn")
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "RESTART"
+
+[node name="Store" type="Button" parent="CanvasLayer"]
+offset_left = 223.0
+offset_top = 110.0
+offset_right = 329.0
+offset_bottom = 141.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Restart")
+focus_neighbor_right = NodePath("../Exit")
+theme = ExtResource("3_5yvkn")
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "STORE"
 
 [node name="Label_time" type="Label" parent="CanvasLayer"]
 offset_left = 21.0
@@ -185,4 +199,6 @@ pitch_scale = 1.6
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="focus_exited" from="CanvasLayer/Restart" to="." method="_on_restart_focus_exited"]
 [connection signal="pressed" from="CanvasLayer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="focus_exited" from="CanvasLayer/Store" to="." method="_on_restart_focus_exited"]
+[connection signal="pressed" from="CanvasLayer/Store" to="." method="_on_store_pressed"]
 [connection signal="timeout" from="Typing_timer" to="." method="_on_typing_timer_timeout"]

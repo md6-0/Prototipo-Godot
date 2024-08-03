@@ -9,6 +9,7 @@ var run_time
 var distance: float
 var enemmies_killed: int
 var coins: int
+var current_run_coins: int
 var hearts: int
 var gemes: int
 var cards_used: int 
@@ -19,7 +20,7 @@ var hand: Array
 var card: String
 
 func _ready():
-	deck = ["jump", "dash", "shoot"]
+	deck = ["Shoot", "Jump"]
 	hand_size = 4
 	credits = 3
 	create_hand()

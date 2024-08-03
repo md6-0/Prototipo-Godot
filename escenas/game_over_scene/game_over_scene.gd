@@ -29,9 +29,7 @@ var char_indices = []
 var label_index = 0
 
 func _ready():
-	restart.visible = false
-	exit.visible = false
-	
+	restart.grab_focus()
 	var time = GLOBAL.run_time
 	var minutes = int(time / 60)
 	var seconds = int(time) % 60
@@ -77,7 +75,7 @@ func _ready():
 		"Hearts collected: ",
 		str(GLOBAL.hearts),
 		"Coins collected: ",
-		str(GLOBAL.coins),
+		str(GLOBAL.current_run_coins),
 		"Gems collected: ",
 		str(GLOBAL.gemes),
 		"Cards used: ",
@@ -100,9 +98,6 @@ func _on_typing_timer_timeout():
 			label_index += 1
 	else:
 		typing_timer.stop()
-		restart.visible = true
-		exit.visible = true
-		restart.grab_focus()
 
 func _on_exit_pressed():
 	get_tree().quit()
@@ -110,7 +105,7 @@ func _on_exit_pressed():
 func _on_restart_pressed():
 	GLOBAL.score = 0
 	GLOBAL.credits = 3
-	GLOBAL.coins = 0
+	GLOBAL.current_run_coins = 0
 	GLOBAL.run_time = 0
 	GLOBAL.distance = 0
 	GLOBAL.enemmies_killed = 0
@@ -125,3 +120,15 @@ func _on_restart_focus_exited():
 
 func _on_exit_focus_exited():
 	audio_stream_player.play()
+
+
+func _on_store_pressed():
+	GLOBAL.score = 0
+	GLOBAL.credits = 3
+	GLOBAL.current_run_coins = 0
+	GLOBAL.run_time = 0
+	GLOBAL.distance = 0
+	GLOBAL.enemmies_killed = 0
+	GLOBAL.hearts = 0
+	GLOBAL.cards_used = 0
+	get_tree().change_scene_to_file("res://escenas/store_scene/store.tscn")

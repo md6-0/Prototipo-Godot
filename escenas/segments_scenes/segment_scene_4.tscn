@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="2_41uch"]
 [ext_resource type="PackedScene" uid="uid://b0sdrbs180hhq" path="res://escenas/heart_scene/heart_scene.tscn" id="4_2tme2"]
 [ext_resource type="PackedScene" uid="uid://dd3synd7p7xdj" path="res://escenas/coin_scene/coin.tscn" id="5_od5q7"]
-[ext_resource type="PackedScene" uid="uid://dw8c21uqaqyq7" path="res://escenas/enemy_scene/enemy.tscn" id="5_smft0"]
-[ext_resource type="PackedScene" uid="uid://dtvyn086k6gqq" path="res://escenas/enemy3_scene/enemy3.tscn" id="6_rmbn1"]
+[ext_resource type="PackedScene" uid="uid://dw8c21uqaqyq7" path="res://escenas/enemies/enemy_scene/enemy.tscn" id="5_smft0"]
+[ext_resource type="PackedScene" uid="uid://dtvyn086k6gqq" path="res://escenas/enemies/enemy3_scene/enemy3.tscn" id="6_rmbn1"]
 [ext_resource type="PackedScene" uid="uid://bei37e78shlq8" path="res://escenas/underground_death_limit/underground_death_limit.tscn" id="6_si48n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lutna"]

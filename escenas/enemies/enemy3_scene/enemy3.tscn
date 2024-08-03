@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtvyn086k6gqq"]
+
+[ext_resource type="Script" path="res://escenas/enemies/enemy3_scene/enemy3.gd" id="1_nq701"]
+[ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="2_365yd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyxbl"]
+size = Vector2(367, 183)
+
+[node name="Enemy3" type="Node2D"]
+script = ExtResource("1_nq701")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Detection_CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-183.5, 106.5)
+shape = SubResource("RectangleShape2D_nyxbl")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_365yd")
+region_enabled = true
+region_rect = Rect2(86.9154, 271.98, 12.1617, 31.0176)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

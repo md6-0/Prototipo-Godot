@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqav5evnvso82"]
+
+[ext_resource type="Script" path="res://escenas/enemies/enemy3_scene/enemy3_shoot.gd" id="1_l6jjn"]
+[ext_resource type="Texture2D" uid="uid://di12nqmr2oo4g" path="res://assets/coins-chests-etc-2-0-noborders.png" id="2_khtpc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltn27"]
+size = Vector2(8, 10)
+
+[node name="Shoot" type="Area2D" groups=["enemy_shoot"]]
+script = ExtResource("1_l6jjn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_khtpc")
+region_enabled = true
+region_rect = Rect2(563.537, 248.457, 7.97272, 7.9727)
+
+[node name="Shoot_CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ltn27")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://rrdhxxed880w"]
 
 [ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="1_p5uuu"]
-[ext_resource type="PackedScene" uid="uid://dw8c21uqaqyq7" path="res://escenas/enemy_scene/enemy.tscn" id="2_egqaj"]
-[ext_resource type="PackedScene" uid="uid://cy8sscx5ndasg" path="res://escenas/enemy2_scene/enemy2.tscn" id="4_tmuuu"]
+[ext_resource type="PackedScene" uid="uid://dw8c21uqaqyq7" path="res://escenas/enemies/enemy_scene/enemy.tscn" id="2_egqaj"]
+[ext_resource type="PackedScene" uid="uid://cy8sscx5ndasg" path="res://escenas/enemies/enemy2_scene/enemy2.tscn" id="4_tmuuu"]
 [ext_resource type="PackedScene" uid="uid://dd3synd7p7xdj" path="res://escenas/coin_scene/coin.tscn" id="4_xwrj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lutna"]

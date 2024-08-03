@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://sgqh15rdwh6o"]
+
+[ext_resource type="Script" path="res://escenas/store_scene/store.gd" id="1_xmvbp"]
+[ext_resource type="Theme" uid="uid://dwocoy3cdqw1r" path="res://escenas/theme.tres" id="2_e68sl"]
+
+[node name="Store" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmvbp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 73.0
+offset_right = -8.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 39
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -13.0
+offset_right = 555.0
+offset_bottom = 61.0
+color = Color(0.250818, 0.250818, 0.250818, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 144.0
+offset_bottom = 43.0
+size_flags_horizontal = 8
+theme = ExtResource("2_e68sl")
+text = "Main menu"
+
+[node name="Coins_Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 10.0
+offset_right = 459.0
+offset_bottom = 33.0
+theme = ExtResource("2_e68sl")
+theme_override_font_sizes/font_size = 0
+text = "Coins:"
+
+[node name="Gems_Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 39.0
+offset_right = 454.0
+offset_bottom = 62.0
+theme = ExtResource("2_e68sl")
+text = "Gems:"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

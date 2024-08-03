@@ -33,13 +33,13 @@ func update_cards_gui():
 
 func update_sprite(sprite: Sprite2D, action: String):
 	match action:
-		"jump":
+		"Jump":
 			sprite.texture = load("res://assets/Up.png")
 			sprite.modulate = Color.CADET_BLUE
-		"dash":
+		"Dash":
 			sprite.texture = load("res://assets/Right.png")
 			sprite.modulate = Color.KHAKI
-		"shoot":
+		"Shoot":
 			sprite.texture = load("res://assets/shoot.png")
 			sprite.modulate = Color.INDIAN_RED
 		_:

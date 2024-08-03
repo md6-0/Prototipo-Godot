@@ -95,9 +95,9 @@ func death_ctrl(delta):
 
 func perform_action(card: String):
 	match card:
-		"jump": jump_ctrl()
-		"dash": dash_ctrl()
-		"shoot": shoot_ctrl()
+		"Jump": jump_ctrl()
+		"Dash": dash_ctrl()
+		"Shoot": shoot_ctrl()
 	GLOBAL.cards_used += 1
 
 func jump_ctrl():

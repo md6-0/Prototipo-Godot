@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://i4t0hbtjl3cv"]
 
 [ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="1_wnwg4"]
-[ext_resource type="PackedScene" uid="uid://dtvyn086k6gqq" path="res://escenas/enemy3_scene/enemy3.tscn" id="3_urb53"]
+[ext_resource type="PackedScene" uid="uid://dtvyn086k6gqq" path="res://escenas/enemies/enemy3_scene/enemy3.tscn" id="3_urb53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lutna"]
 texture = ExtResource("1_wnwg4")

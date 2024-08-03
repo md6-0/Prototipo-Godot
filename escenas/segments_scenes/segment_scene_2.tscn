@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://f7ipj4bo24nn"]
 
 [ext_resource type="Texture2D" uid="uid://ddt1jackkrpxd" path="res://assets/monochrome_tilemap_transparent.png" id="1_80msl"]
-[ext_resource type="PackedScene" uid="uid://cy8sscx5ndasg" path="res://escenas/enemy2_scene/enemy2.tscn" id="4_fv2yx"]
-[ext_resource type="PackedScene" uid="uid://dw8c21uqaqyq7" path="res://escenas/enemy_scene/enemy.tscn" id="4_w6s7u"]
+[ext_resource type="PackedScene" uid="uid://cy8sscx5ndasg" path="res://escenas/enemies/enemy2_scene/enemy2.tscn" id="4_fv2yx"]
+[ext_resource type="PackedScene" uid="uid://dw8c21uqaqyq7" path="res://escenas/enemies/enemy_scene/enemy.tscn" id="4_w6s7u"]
 [ext_resource type="PackedScene" uid="uid://b0sdrbs180hhq" path="res://escenas/heart_scene/heart_scene.tscn" id="5_0qneu"]
 [ext_resource type="PackedScene" uid="uid://dd3synd7p7xdj" path="res://escenas/coin_scene/coin.tscn" id="6_1go3g"]
 
